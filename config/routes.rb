@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'students/create'
+  post 'students/create'
 
   get 'students/edit'
 

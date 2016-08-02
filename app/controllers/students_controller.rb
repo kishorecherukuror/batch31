@@ -1,10 +1,9 @@
 class StudentsController < ApplicationController
   def create
-    @name = "raju"
-    @age = 25
-    @address = "vijayawada"
-    @gender = "male"
-    @mail = "raju@gmail.com"
+    @name = params[:name]
+    @age = params[:age]
+    @address = params[:address]
+    @gender = params[:gender]
   end
 
   def edit
