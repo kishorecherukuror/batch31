@@ -1,13 +1,16 @@
-<%= form_tag do %>
+<%= form_tag students_show_path do %>
 	Enter Name:<%= text_field_tag 'name'%><br />
 	Enter Age: <%= text_field_tag 'age' %><br />
 	Enter Address: <%= text_area_tag 'address'%><br />
 	Male:<%= radio_button_tag 'gender', 'male' %>
 	Female: <%= radio_button_tag 'gender', 'female' %><br />
+	DOB: <%= date_field_tag 'dob' %><br />
+	Habits:<br />Color <%= color_field_tag 'rock' %><br />
+	Email: <%=  email_field_tag 'email' %><br /><br />
+	<%= select_tag "locations", "<option>Home</option><option selected='selected'>Work</option><option>Out</option>".html_safe %><br />
+	Phone Number: <%= telephone_field_tag "phone" %><br />
+	Upload: <%= file_field_tag "file" %><br />
+
 	<%= submit_tag %>
 <% end %>
 
-<%= @name %><br />
-<%= @age %><br />
-<%= @address %><br />
-<%= @gender %><br />

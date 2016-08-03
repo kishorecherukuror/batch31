@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   get 'students/edit'
 
+
   get 'students/show'
+  post 'students/show'
 
   get 'students/index'
 
