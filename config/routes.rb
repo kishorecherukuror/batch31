@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'mathematics/prime'
+  post 'mathematics/prime'
+
+  get 'mathematics/evenodd'
+  post 'mathematics/evenodd'
+
+  get 'mathematics/palindrome'
+  post 'mathematics/palindrome'
+
   get 'students/create'
   post 'students/create'
 
