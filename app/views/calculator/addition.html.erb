@@ -1,0 +1,9 @@
+<%= text_field_tag 'txtres', @var3, placeholder: 'Result', size: 8 %><br/><br/>
+
+<%= form_tag do %>
+	<%= text_field_tag 'txtbox1', '', placeholder: 'First Variable', size: 8 %><br/><br/>
+	<%= text_field_tag 'txtbox2', '', placeholder: 'Second Variable', size: 8 %><br/><br/>
+	<%= submit_tag "Add" %><br/><br/>
+<% end %>
+
+&nbsp;<font size="-1"><a href="/calculator/subtraction">Subtraction</a> | <a href="/calculator/multiplication">Multiplication</a> | <a href="/calculator/division">Division</a></font>

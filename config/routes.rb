@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'calculator/addition'
+  post 'calculator/addition'
+  get 'calculator/subtraction'
+  post 'calculator/subtraction'
+  get 'calculator/multiplication'
+  post 'calculator/multiplication'
+  get 'calculator/division'
+  post 'calculator/division'
   get 'students/create'
   post 'students/create'
 
@@ -14,7 +22,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'students#create'
+   root 'calculator#addition'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
