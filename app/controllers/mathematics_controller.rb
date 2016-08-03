@@ -1,21 +1,21 @@
 class MathematicsController < ApplicationController
   def prime
-  	@number = params[:number]
-  	if @number.to_i == 2
-		@result = "2 is Prime Number"
-	else
-		p = true
-		for i in 2..@number.to_i/2
-			if @number.to_i % i == 0
-				p = false
+  	@number = params[:number].to_i
+	  	if @number == 2
+			@result = "2 is Prime Number"
+		else
+			p = true
+			for i in 2..@number/2
+				if @number % i == 0
+					p = false
+				end
+			end
+			if p
+				@result = "#{@number} is Prime Number"
+			else
+				@result = "#{@number} is not Prime Number"
 			end
 		end
-		if p
-			@result = "#{@number} is Prime Number"
-		else
-			@result = "#{@number} is not Prime Number"
-		end
-	end
   end
 
   def evenodd
