@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  get 'students/create'
+  get  'employee/create'
+  post 'employee/create'
+  get 'employee/show'
+  post 'employee/show'
+  get 'employee/add'
 
+  get 'mathematics/fibonacci'
+  post 'mathematics/fibonacci'
+  
+  get 'students/create'
+  post 'students/create'
   get 'students/edit'
 
   get 'students/show'

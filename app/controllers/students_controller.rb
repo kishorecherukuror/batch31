@@ -3,6 +3,8 @@ class StudentsController < ApplicationController
     @name = "raju"
     @age = 25
     @address = "vijayawada"
+    @gender="male"
+    @email="raju123@gmail.com"
   end
 
   def edit
