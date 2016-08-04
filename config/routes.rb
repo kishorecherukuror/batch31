@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get  'employee/create'
   post 'employee/create'
   get 'employee/show'
   post 'employee/show'
   get 'employee/add'
+=======
+  get 'marks/create'
+  post 'marks/create'
+  get 'students/create'
+>>>>>>> 31c63f4eb6deb3ce23330e5f71fc763367a3c1ec
 
   get 'mathematics/fibonacci'
   post 'mathematics/fibonacci'
