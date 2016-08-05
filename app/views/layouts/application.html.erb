@@ -7,6 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= link_to 'Home', root_path %>
+<%= link_to 'EvenOdd', mathematics_evenodd_path %>
+<%= link_to 'Prime', mathematics_prime_path %>
+<%= link_to 'Palindrome', mathematics_palindrome_path %>
+<%= link_to 'CreateSudent', students_create_path %>
 
 <%= yield %>
 
