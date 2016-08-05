@@ -8,6 +8,14 @@ Rails.application.routes.draw do
   get 'mathematics/palindrome'
   post 'mathematics/palindrome'
 
+  get 'calculator/addition'
+  post 'calculator/addition'
+  get 'calculator/subtraction'
+  post 'calculator/subtraction'
+  get 'calculator/multiplication'
+  post 'calculator/multiplication'
+  get 'calculator/division'
+  post 'calculator/division'
   get 'students/create'
   post 'students/create'
 
