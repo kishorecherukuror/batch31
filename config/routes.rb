@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   post 'calculator/multiplication'
   get 'calculator/division'
   post 'calculator/division'
+  get 'marks/create'
+  post 'marks/create'
   get 'students/create'
   post 'students/create'
 
