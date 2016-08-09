@@ -1,9 +1,35 @@
 Rails.application.routes.draw do
+  get 'teachers/new'
+
+  get 'teachers/create'
+  post 'teachers/create'
+  get 'teachers/index'
+
+  get 'mathematics/prime'
+  post 'mathematics/prime'
+
+  get 'mathematics/evenodd'
+  post 'mathematics/evenodd'
+
+  get 'mathematics/palindrome'
+  post 'mathematics/palindrome'
+
+  get 'calculator/addition'
+  post 'calculator/addition'
+  get 'calculator/subtraction'
+  post 'calculator/subtraction'
+  get 'calculator/multiplication'
+  post 'calculator/multiplication'
+  get 'calculator/division'
+  post 'calculator/division'
   get 'students/create'
+  post 'students/create'
 
   get 'students/edit'
 
+
   get 'students/show'
+  post 'students/show'
 
   get 'students/index'
 

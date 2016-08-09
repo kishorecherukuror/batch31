@@ -1,0 +1,16 @@
+<br />
+<table border="1">
+<tr>
+	<th>FirstName</th>
+	<th>LastName</th>
+	<th>FullName</th>
+	<th>Department</th>
+</tr>
+<% @teachers.each do |t|  %>
+<tr>
+<td><%= t.fname %></td>
+<td><%= t.lname %></td>
+<td><%= t.ful_name %></td>
+<td><%= t.department %></td></tr><br />
+<% end %>
+</table>

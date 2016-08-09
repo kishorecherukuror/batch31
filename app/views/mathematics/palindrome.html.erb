@@ -1,0 +1,9 @@
+<%= form_tag do %>
+	Enter Value :<%= text_field_tag 'value'%><br />
+	
+	<%= submit_tag "Palindrome" %>
+<% end %>
+
+<% if @value != nil %>
+<%=	@result %>
+<% end %>
