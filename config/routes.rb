@@ -7,22 +7,39 @@ Rails.application.routes.draw do
   post 'calculator/multiplication'
   get 'calculator/division'
   post 'calculator/division'
+
   get 'students/create'
   post 'students/create'
-
   get 'students/edit'
-
   get 'students/show'
-
   get 'students/index'
-
   get 'students/delete'
+
+  get 'employee/create'
+  get 'employee/show'
+  post 'employee/show'  
+  get 'employee/index' 
+
+  get 'product/create'
+  get 'product/show'
+  post 'product/show'  
+  get 'product/index'
+  #get 'product/display'
+  #post 'product/display'
+
+  get '/product/display/:id', to: 'product#display', as: 'display'
+
+  get '/product/edit/:id', to: 'product#edit', as: 'edit'
+
+  patch 'product/:id', to: 'product#update', as: 'update'
+
+  delete 'product/:id', to: 'product#delete', as: 'delete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'calculator#addition'
+   root 'product#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

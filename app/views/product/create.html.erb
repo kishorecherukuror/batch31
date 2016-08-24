@@ -1,0 +1,13 @@
+<% if @product.errors %>
+	<% @product.errors.full_messages.each do |m| %>
+	<%= m %>
+	<% end %>
+<% end %>
+
+<%= form_for @product, url: {action:"show"} do |p| %>
+SKU: <%= p.text_field :sku %><br/><br/>
+Name: <%= p.text_field :name %><br/><br/>
+Quantity: <%= p.select :quantity, ['1','2','3','4','5'] %><br/><br/>
+Price: <%= p.text_field :price %><br/><br/>
+<%= p.submit %>
+<% end %>

@@ -1,0 +1,27 @@
+<h1>Product List</h1>
+
+<table border="1" width="50%" cellpadding="5" cellspacing="5">
+	<tr>
+		<th>SKU</th>
+		<th>Name</th>
+		<th>Quantity</th>
+		<th>Price</th>
+		<th nowrap>Total Price</th>
+		<th>Action</th>
+	</tr>
+<% @product.each do |i| %>
+	<tr>
+		<td><%= i.sku %></td>
+		<td><%= i.name %></td>
+		<td><%= i.quantity %></td>
+		<td><%= i.price.to_i %></td>
+		<td><%= i.totalprice.to_i %></td>
+		<td nowrap><%= link_to "Show", display_path(i) %> | <%= link_to "Edit", edit_path(i) %> | <%= link_to "Delete", delete_path(i), method: :delete, data: { confirm: 'Are you sure you want to delete the record?' } %>
+</td>
+	</tr>
+<% end %>
+</table>
+
+<%= link_to "Add", product_create_path %>
+
+

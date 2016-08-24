@@ -1,0 +1,65 @@
+<%= form_tag employee_show_path do %>
+<table cellpadding="5" cellspacing="5" border="0" width="65%">
+    <tr>
+        <td colspan="2" height="50"><b>Employee Registration Form.</b></td>
+    </tr>
+    <tr>
+        <td>Employee Name:</td>
+         <td><%= text_field_tag 'emp_name', nil, size: 16 %></td>
+    </tr>
+    <tr>
+        <td>Age:</td>
+         <td><%= select_tag "emp_age", "<script>
+for(var i=5; i<=70; i++){
+	document.write('<option value='+i+'>'+i+'</option>')
+}
+</script>".html_safe %></td>
+    </tr>
+    <tr>
+        <td>Date of Birth:</td>
+         <td><%= date_field_tag 'emp_dob', Date.today %></td>
+    </tr>    
+    <tr>
+        <td>Gender:</td>
+         <td><%= radio_button_tag 'emp_gender', 'Male' %>&nbsp;Male&nbsp;&nbsp;&nbsp;&nbsp;<%= radio_button_tag 'emp_gender', 'Female' %>&nbsp;Female</td>
+    </tr>
+    <tr>
+        <td>Marital Status:</td>
+         <td><%= radio_button_tag 'emp_marital_status', 'Single' %>&nbsp;Single&nbsp;&nbsp;&nbsp;&nbsp;<%= radio_button_tag 'emp_marital_status', 'Married' %>&nbsp;Married</td>
+    </tr>          
+	<tr>
+        <td>Address:</td>
+         <td><%= text_area_tag 'emp_address', nil, rows: 4, cols: 25 %></textarea></td>
+    </tr>
+	<tr>
+        <td>City:</td>
+         <td><%= text_field_tag 'emp_city', nil, size: 16 %></td>
+    </tr>    
+	<tr>
+        <td>State:</td>
+         <td><%= text_field_tag 'emp_state', nil, size: 16 %></td>
+    </tr>
+    <tr>
+        <td>Country:</td>
+         <td><%= select_tag "emp_country", "<option>India</option><option>USA</option><option>Canada</option><option>Australia</option>".html_safe %></td>
+    </tr>
+	<tr>
+        <td>Zip:</td>
+         <td><%= text_field_tag 'emp_zip', nil, maxlength: 6, size: 6 %></td>
+    </tr>    
+    <tr>
+        <td>Contact Number:</td>
+        <td><%= telephone_field_tag 'emp_tel' %></td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td><%= email_field_tag 'emp_email' %></td>
+    </tr>
+    <tr>
+        <td>Photo:</td>
+        <td><%= file_field_tag 'emp_pic', accept: 'image/png,image/gif,image/jpeg' %></td>
+    </tr>    
+        <td colspan="2"><%= submit_tag "Submit Info" %></td>
+    </tr>    
+</table>
+<% end %>

@@ -1,0 +1,9 @@
+<%= text_field_tag 'txtres', @var3, placeholder: 'Result', size: 8 %><br/><br/>
+
+<%= form_tag do %>
+	<%= text_field_tag 'txtbox1', nil, placeholder: 'First Variable', size: 8 %>
+	<br/><br/>
+	<%= text_field_tag 'txtbox2', nil, placeholder: 'Second Variable', size: 8 %>
+	<br/><br/>
+	<%= submit_tag "Calculate" %><br/><br/>
+<% end %>

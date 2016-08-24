@@ -1,0 +1,26 @@
+<h1>Employee Information</h1>
+
+<p><%= @e_name %></p>
+<p><%= @e_age %></p>
+<p><%= @e_dob %></p>
+<p><%= @e_gender %></p>
+<p><%= @e_marital_status %></p>
+<p><%= @e_address %></p>
+<p><%= @e_city %></p>
+<p><%= @e_state %></p>
+<p><%= @e_country %></p>
+<p><%= @e_zip %></p>
+<p><%= @e_tel %></p>
+<p><%= @e_email %></p>
+<p><%= @e_photo %></p>
+
+
+<%
+#@key = @key.reverse.drop(3).reverse.drop(2)
+#@value = @value.reverse.drop(3).reverse.drop(2)
+%>
+
+<% #(0..@key.length-1).each  do |i| %>
+
+<%= #@key[i] %>: <%= #@value[i] %><br />
+<% #end %>
