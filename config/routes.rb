@@ -1,10 +1,25 @@
 Rails.application.routes.draw do
+ 
+
+  resources :libraries
+
+
+
+  get 'teachers/update'
   get 'teachers/new'
 
   get 'teachers/create'
   post 'teachers/create'
   get 'teachers/index'
+  post 'teachers/index'
+  
+  get '/teachers/:id', to: 'teachers#edit' ,as: 'kishore'
+  patch 'teachers/:id', to: 'teachers#update', as: 'teachers'
+  get '/teachers/show/:id', to: 'teachers#show' ,as: 'show'
 
+  delete '/teachers/destroy/:id', to: 'teachers#destroy' ,as: 'destroy'
+  
+  
   get 'mathematics/prime'
   post 'mathematics/prime'
 
@@ -27,6 +42,7 @@ Rails.application.routes.draw do
   get 'students/create'
   post 'students/create'
 
+
   get 'students/edit'
 
 
@@ -41,7 +57,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'students#create'
+   root 'teachers#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

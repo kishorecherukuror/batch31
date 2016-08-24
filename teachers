@@ -1,0 +1,31 @@
+                   Prefix Verb URI Pattern                          Controller#Action
+            teachers_edit GET  /teachers/edit(.:format)             teachers#edit
+          teachers_update GET  /teachers/update(.:format)           teachers#update
+             teachers_new GET  /teachers/new(.:format)              teachers#new
+          teachers_create GET  /teachers/create(.:format)           teachers#create
+                          POST /teachers/create(.:format)           teachers#create
+           teachers_index GET  /teachers/index(.:format)            teachers#index
+        mathematics_prime GET  /mathematics/prime(.:format)         mathematics#prime
+                          POST /mathematics/prime(.:format)         mathematics#prime
+      mathematics_evenodd GET  /mathematics/evenodd(.:format)       mathematics#evenodd
+                          POST /mathematics/evenodd(.:format)       mathematics#evenodd
+   mathematics_palindrome GET  /mathematics/palindrome(.:format)    mathematics#palindrome
+                          POST /mathematics/palindrome(.:format)    mathematics#palindrome
+      calculator_addition GET  /calculator/addition(.:format)       calculator#addition
+                          POST /calculator/addition(.:format)       calculator#addition
+   calculator_subtraction GET  /calculator/subtraction(.:format)    calculator#subtraction
+                          POST /calculator/subtraction(.:format)    calculator#subtraction
+calculator_multiplication GET  /calculator/multiplication(.:format) calculator#multiplication
+                          POST /calculator/multiplication(.:format) calculator#multiplication
+      calculator_division GET  /calculator/division(.:format)       calculator#division
+                          POST /calculator/division(.:format)       calculator#division
+             marks_create GET  /marks/create(.:format)              marks#create
+                          POST /marks/create(.:format)              marks#create
+          students_create GET  /students/create(.:format)           students#create
+                          POST /students/create(.:format)           students#create
+            students_edit GET  /students/edit(.:format)             students#edit
+            students_show GET  /students/show(.:format)             students#show
+                          POST /students/show(.:format)             students#show
+           students_index GET  /students/index(.:format)            students#index
+          students_delete GET  /students/delete(.:format)           students#delete
+                     root GET  /                                    students#create

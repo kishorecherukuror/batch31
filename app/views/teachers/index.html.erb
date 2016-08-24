@@ -1,16 +1,36 @@
-<br />
+<br /><br />
+
+<%= form_tag do %>
+name : <%= select_tag "fname", options_from_collection_for_select(Teacher.select(:fname).uniq, "fname", "fname") ,include_blank: true%>
+age: <%= select_tag "age", options_from_collection_for_select(@teachers, "age", "age"),include_blank: true %>
+department: <%= select_tag "dept", options_from_collection_for_select(@teachers, "department", "department") ,include_blank: true %>
+
+<%= submit_tag "filter" %>
+
+<% end %>
+<br /><br />
+
 <table border="1">
 <tr>
 	<th>FirstName</th>
 	<th>LastName</th>
 	<th>FullName</th>
 	<th>Department</th>
+	<th>Action</th>
 </tr>
+<% if @teachers.empty? %>
+<tr>------No records found-------</tr>
+<% end %>
 <% @teachers.each do |t|  %>
 <tr>
 <td><%= t.fname %></td>
 <td><%= t.lname %></td>
 <td><%= t.ful_name %></td>
-<td><%= t.department %></td></tr><br />
+<td><%= t.department %></td>
+<td><%= link_to 'edit', kishore_path(t) %>
+<%= link_to 'show', show_path(t) %>
+<%= link_to 'delete', destroy_path(t), :method => "delete", :data => {confirm: "Are you sure?"} %></td></tr>
 <% end %>
 </table>
+
+<%= link_to "new" , teachers_new_path %>
