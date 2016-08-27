@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
  
 
+  resources :brands
+  resources :spects do 
+    member do
+      get 'new/:id', to: 'spects#new' , as: 'spect_new'
+    end
+  end
+  resources :products
+  resources :categories
   resources :libraries
 
 
@@ -10,8 +18,8 @@ Rails.application.routes.draw do
 
   get 'teachers/create'
   post 'teachers/create'
-  get 'teachers/index'
-  post 'teachers/index'
+  get 'teachers/index', defaults: { format: 'js' }
+  post 'teachers/index' , defaults: { format: 'js' }
   
   get '/teachers/:id', to: 'teachers#edit' ,as: 'kishore'
   patch 'teachers/:id', to: 'teachers#update', as: 'teachers'

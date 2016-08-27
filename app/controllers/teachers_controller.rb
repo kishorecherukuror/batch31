@@ -44,6 +44,10 @@ class TeachersController < ApplicationController
     @teachers = @teachers.find_name(params[:fname]) if params[:fname].present?
     @teachers = @teachers.find_age(params[:age]) if params[:age].present?
     @teachers = @teachers.find_dept(params[:dept]) if params[:dept].present?
+    respond_to do |format|
+        format.js
+        format.html
+    end
   end
 
 

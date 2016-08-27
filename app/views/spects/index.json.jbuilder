@@ -1,0 +1,1 @@
+json.array! @spects, partial: 'spects/spect', as: :spect
