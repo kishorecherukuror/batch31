@@ -1,0 +1,16 @@
+<% if @teacher.errors %>
+	<% @teacher.errors.full_messages.each do |m| %>
+		<p><%= m %></p>
+	<% end %>
+<% end %>
+<%= form_for @teacher, url: {:action => "create"} do |f| %>
+
+<p>First Name : <%= f.text_field :fname%></p>
+<p>Last Name: <%= f.text_field :lname %></p>
+ <%= f.hidden_field :ful_name %>
+<p> Department: <%= f.text_field :department %></p>
+<p>Age: <%= f.number_field :age %></p>
+<p>Email: <%= f.text_field :email %></p>
+<p><%= f.submit %></p>
+
+<% end %>

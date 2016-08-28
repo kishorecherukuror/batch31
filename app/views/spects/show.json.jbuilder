@@ -1,0 +1,1 @@
+json.partial! "spects/spect", spect: @spect

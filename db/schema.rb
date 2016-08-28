@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160822163323) do
 
   create_table "employees", force: :cascade do |t|
@@ -18,10 +19,17 @@ ActiveRecord::Schema.define(version: 20160822163323) do
     t.integer  "age"
     t.string   "dob"
     t.string   "gender"
+=======
+ActiveRecord::Schema.define(version: 20160827115056) do
+
+  create_table "brands", force: :cascade do |t|
+    t.string   "name"
+>>>>>>> f10ecdb58465259266b2a24bb0aa02df35e0fb82
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "newemployees", force: :cascade do |t|
     t.string   "name"
     t.integer  "age"
@@ -36,11 +44,24 @@ ActiveRecord::Schema.define(version: 20160822163323) do
     t.string   "contact"
     t.string   "email"
     t.string   "photo"
+=======
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "libraries", force: :cascade do |t|
+    t.string   "book_name"
+    t.string   "author"
+    t.string   "category"
+>>>>>>> f10ecdb58465259266b2a24bb0aa02df35e0fb82
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
+<<<<<<< HEAD
     t.string   "sku"
     t.string   "name"
     t.integer  "quantity"
@@ -48,6 +69,46 @@ ActiveRecord::Schema.define(version: 20160822163323) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float    "totalprice"
+=======
+    t.string   "name"
+    t.integer  "price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "category_id"
+  end
+
+  create_table "spects", force: :cascade do |t|
+    t.string   "name"
+    t.string   "design"
+    t.integer  "brand_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "spects", ["brand_id"], name: "index_spects_on_brand_id"
+
+  create_table "students", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.text     "address"
+    t.string   "gender"
+    t.string   "dob"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teachers", force: :cascade do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "ful_name"
+    t.string   "department"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "phone"
+    t.string   "email"
+    t.integer  "age"
+    t.integer  "salary"
+>>>>>>> f10ecdb58465259266b2a24bb0aa02df35e0fb82
   end
 
 end

@@ -1,0 +1,16 @@
+<h1><u> Student Marks Details</u></h1>
+
+<%= form_tag do %>
+ Marks1: <%= text_field_tag 'marks1' %><br>
+ Marks2: <%= text_field_tag 'marks2' %><br>
+ Marks3:  <%= text_field_tag 'marks3' %><br>
+ Marks4: <%= text_field_tag 'marks4' %><br>
+         <%= submit_tag     'submit' %><br>
+<% end %>
+
+<% if  (@class != nil) %>
+Total marks:<%= @total %> <br>
+Percentage:<%= @percentage %> <br>
+Grade:<%= @class %> <br>
+<% end %>
+         

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @spect.name %>
+</p>
+
+<p>
+  <strong>Design:</strong>
+  <%= @spect.design %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @spect.brand %>
+</p>
+
+<%= link_to 'Edit', edit_spect_path(@spect) %> |
+<%= link_to 'Back', spects_path %>

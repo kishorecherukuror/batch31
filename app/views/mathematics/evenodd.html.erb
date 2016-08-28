@@ -1,0 +1,9 @@
+<%= form_tag do %>
+	Enter Value :<%= text_field_tag 'number'%><br />
+	
+	<%= submit_tag "EvenOdd"%>
+<% end %>
+
+<% if @number != nil %>
+<%=	@result %>
+<% end %>

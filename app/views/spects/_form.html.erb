@@ -1,0 +1,30 @@
+<%= form_for(@spect) do |f| %>
+  <% if @spect.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@spect.errors.count, "error") %> prohibited this spect from being saved:</h2>
+
+      <ul>
+      <% @spect.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :design %><br>
+    <%= f.text_field :design %>
+  </div>
+  <div class="field">
+  <% unless @brand.nil? %>
+    <%= hidden_field_tag :brand_id , @brand.id %>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

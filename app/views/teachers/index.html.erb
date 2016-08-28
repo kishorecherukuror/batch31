@@ -1,0 +1,20 @@
+<br /><br />
+
+<%= form_tag remote: true do %>
+name : <%= select_tag "fname", options_from_collection_for_select(Teacher.select(:fname).uniq, "fname", "fname") ,include_blank: true%>
+age: <%= select_tag "age", options_from_collection_for_select(@teachers, "age", "age"),include_blank: true %>
+department: <%= select_tag "dept", options_from_collection_for_select(@teachers, "department", "department") ,include_blank: true %>
+
+<%= submit_tag "filter" %>
+
+<% end %>
+<br /><br />
+<div>
+	<div id="items_grid" >
+		<%= render partial: 'teachers_data', locals: { teachers: @teachers} %>
+	</div>
+</div>
+
+
+
+<%= link_to "new" , teachers_new_path %>

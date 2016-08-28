@@ -1,0 +1,22 @@
+<table border="1">
+<tr>
+	<th>FirstName</th>
+	<th>LastName</th>
+	<th>FullName</th>
+	<th>Department</th>
+	<th>Action</th>
+</tr>
+<% if teachers.empty? %>
+<tr>------No records found-------</tr>
+<% end %>
+<% teachers.each do |t|  %>
+<tr>
+<td><%= t.fname %></td>
+<td><%= t.lname %></td>
+<td><%= t.ful_name %></td>
+<td><%= t.department %></td>
+<td><%= link_to 'edit', kishore_path(t) %>
+<%= link_to 'show', show_path(t) %>
+<%= link_to 'delete', destroy_path(t), :method => "delete", :data => {confirm: "Are you sure?"} %></td></tr>
+<% end %>
+</table>

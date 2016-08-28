@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<<<<<<< HEAD
 <table border="1" cellpadding="5" cellspacing="5" width="100%">
 	<tr>
 		<td colspan="2" align="center" height="50"><strong>This is header part...</strong></td>
@@ -15,6 +16,13 @@
 		<td width="20%"><strong>This is left navigation part...</strong></td>
 		<td>
 			<!-- Body area starts here -->		
+=======
+<%= link_to 'Home', root_path %>
+<%= link_to 'EvenOdd', mathematics_evenodd_path %>
+<%= link_to 'Prime', mathematics_prime_path %>
+<%= link_to 'Palindrome', mathematics_palindrome_path %>
+<%= link_to 'CreateSudent', students_create_path %>
+>>>>>>> f10ecdb58465259266b2a24bb0aa02df35e0fb82
 
 			<%= yield %>
 

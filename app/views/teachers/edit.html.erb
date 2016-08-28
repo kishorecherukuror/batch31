@@ -1,0 +1,10 @@
+<%= form_for @teacher , url: teachers_path(@teacher) do |f| %>
+
+<p>First Name : <%= f.text_field :fname%></p>
+<p>Last Name: <%= f.text_field :lname %></p>
+<p>Ful Name: <%= f.text_field :ful_name %></p>
+<p> Department: <%= f.text_field :department %></p>
+<p><%= f.submit %>
+<%= link_to 'back', root_path %></p>
+
+<% end %>

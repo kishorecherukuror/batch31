@@ -1,4 +1,42 @@
 Rails.application.routes.draw do
+ 
+
+  resources :brands
+  resources :spects do 
+    member do
+      get 'new/:id', to: 'spects#new' , as: 'spect_new'
+    end
+  end
+  resources :products
+  resources :categories
+  resources :libraries
+
+
+
+  get 'teachers/update'
+  get 'teachers/new'
+
+  get 'teachers/create'
+  post 'teachers/create'
+  get 'teachers/index', defaults: { format: 'js' }
+  post 'teachers/index' , defaults: { format: 'js' }
+  
+  get '/teachers/:id', to: 'teachers#edit' ,as: 'kishore'
+  patch 'teachers/:id', to: 'teachers#update', as: 'teachers'
+  get '/teachers/show/:id', to: 'teachers#show' ,as: 'show'
+
+  delete '/teachers/destroy/:id', to: 'teachers#destroy' ,as: 'destroy'
+  
+  
+  get 'mathematics/prime'
+  post 'mathematics/prime'
+
+  get 'mathematics/evenodd'
+  post 'mathematics/evenodd'
+
+  get 'mathematics/palindrome'
+  post 'mathematics/palindrome'
+
   get 'calculator/addition'
   post 'calculator/addition'
   get 'calculator/subtraction'
@@ -7,11 +45,26 @@ Rails.application.routes.draw do
   post 'calculator/multiplication'
   get 'calculator/division'
   post 'calculator/division'
+<<<<<<< HEAD
 
   get 'students/create'
   post 'students/create'
   get 'students/edit'
   get 'students/show'
+=======
+  get 'marks/create'
+  post 'marks/create'
+  get 'students/create'
+  post 'students/create'
+
+
+  get 'students/edit'
+
+
+  get 'students/show'
+  post 'students/show'
+
+>>>>>>> f10ecdb58465259266b2a24bb0aa02df35e0fb82
   get 'students/index'
   get 'students/delete'
 
@@ -40,7 +93,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+<<<<<<< HEAD
    root 'product#index'
+=======
+   root 'teachers#index'
+>>>>>>> f10ecdb58465259266b2a24bb0aa02df35e0fb82
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
