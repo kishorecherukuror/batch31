@@ -1,6 +1,25 @@
 <h1>Product List</h1>
 
+<table border="0" width="62%" cellpadding="5" cellspacing="5">
+<tr>
+<%= form_tag do %>
+<td nowrap>SKU : <%= text_field_tag 'sku',:sku, :value => Product.select(:sku).uniq, size: 16 %></td>
+<td nowrap>Name: <%= select_tag "name", options_from_collection_for_select(Product.select(:name).uniq, "name", "name"),include_blank: true %></td>
+<td nowrap>Price: <%= select_tag "price", options_for_select(Product.all.collect{ |u| [u.price.to_i, u.price] }) ,include_blank: true %></td>
+<td><%= text_area_tag :area, Product.all.collect{ |u| [u.price.to_i] } %></td>
+
+<td valign="middle"><%= submit_tag "Search" %></td>
+
+<% end %>
+</tr>
+</table>
+<br/><br/>
 <table border="1" width="50%" cellpadding="5" cellspacing="5">
+<% if @product.empty? %>
+	<tr>
+		<td colspan="6" align="center">Hurray no record....</td>
+	</tr>
+<% else %>
 	<tr>
 		<th>SKU</th>
 		<th>Name</th>
@@ -19,9 +38,8 @@
 		<td nowrap><%= link_to "Show", display_path(i) %> | <%= link_to "Edit", edit_path(i) %> | <%= link_to "Delete", delete_path(i), method: :delete, data: { confirm: 'Are you sure you want to delete the record?' } %>
 </td>
 	</tr>
+<% end %>	
 <% end %>
 </table>
-
+<br/>
 <%= link_to "Add", product_create_path %>
-
-

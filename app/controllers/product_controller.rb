@@ -40,7 +40,15 @@ class ProductController < ApplicationController
   end
 
   def index
-    @product = Product.all
+    #@product = Product.all
+
+    # or we can also write
+
+    @product = Product.where(nil)
+
+    @product = @product.find_sku(params[:sku]) if params[:sku].present?
+    @product = @product.find_name(params[:name]) if params[:name].present?
+    @product = @product.find_price(params[:price]) if params[:price].present?    
   end
 
 private

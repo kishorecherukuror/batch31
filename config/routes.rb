@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get 'product/show'
   post 'product/show'  
   get 'product/index'
+  post 'product/index'  
   #get 'product/display'
   #post 'product/display'
 

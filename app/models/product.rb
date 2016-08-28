@@ -8,9 +8,13 @@ class Product < ActiveRecord::Base
 
 	before_save :sku_upper
 
-	before_save :cal_total
+	before_save :total_price
 
-	def cal_total
+	scope :find_sku , -> (sku) {  where(:sku => sku)}
+	scope :find_name, lambda { |name| where(:name => name) }
+	scope :find_price, -> (price) { where(:price => price)}
+
+	def total_price
 		self.totalprice = self.price.to_i * self.quantity.to_i
 	end
 
