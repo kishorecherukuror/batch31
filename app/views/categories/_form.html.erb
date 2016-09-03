@@ -15,6 +15,18 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+  <% if @category[:id].nil? %>
+
+  <h1>Add Product</h1>
+  <% else %>
+  <h1>Edit Product</h1>
+  <% end %>
+
+
+  <%= f.fields_for :products do |p| %>
+   <%= render :partial => 'products' , :locals => {product: p}%>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

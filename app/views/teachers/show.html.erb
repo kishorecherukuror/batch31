@@ -1,4 +1,11 @@
 <p>First Name: <%= @teacher.fname %></p>
 <p>Last Name: <%= @teacher.lname %></p>
 
+<h1>
+	Sections
+</h1>
+<% @teacher.sections.each do |s| %>
+	<%= s.name %>
+<% end %>
+
 <%= link_to 'back', root_path %>

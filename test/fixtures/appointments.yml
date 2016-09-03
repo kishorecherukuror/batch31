@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teacher_id: 
+  parents_id: 
+  appointment_date: MyString
+
+two:
+  teacher_id: 
+  parents_id: 
+  appointment_date: MyString

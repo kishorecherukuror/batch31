@@ -1,0 +1,13 @@
+ 
+      <div class="field">
+        <%= product.label :name %><br>
+        <%= product.text_field :name %>
+      </div>
+      <div class="field">
+        <%= product.label :price %><br>
+        <%= product.text_field :price %>
+      </div>
+      <div class="field">
+      	<%= product.hidden_field :_destroy %>
+      	<%= link_to "Remove", @product, :remote=>true, :class=>'addStep'%>
+      </div>

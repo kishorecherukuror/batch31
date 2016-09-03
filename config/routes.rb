@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
  
 
+  resources :sections
+  resources :parents
+  resources :appointments
   resources :brands
   resources :spects do 
     member do

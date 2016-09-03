@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160827115056) do
+ActiveRecord::Schema.define(version: 20160902112446) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.integer  "teacher_id"
+    t.integer  "parents_id"
+    t.string   "appointment_date"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "appointments", ["parents_id"], name: "index_appointments_on_parents_id"
+  add_index "appointments", ["teacher_id"], name: "index_appointments_on_teacher_id"
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
@@ -33,6 +44,12 @@ ActiveRecord::Schema.define(version: 20160827115056) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "parents", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.integer  "price"
@@ -40,6 +57,17 @@ ActiveRecord::Schema.define(version: 20160827115056) do
     t.datetime "updated_at",  null: false
     t.integer  "category_id"
   end
+
+  create_table "sections", force: :cascade do |t|
+    t.integer  "teacher_id"
+    t.integer  "student_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "sections", ["student_id"], name: "index_sections_on_student_id"
+  add_index "sections", ["teacher_id"], name: "index_sections_on_teacher_id"
 
   create_table "spects", force: :cascade do |t|
     t.string   "name"

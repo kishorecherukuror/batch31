@@ -1,12 +1,15 @@
 class Teacher < ActiveRecord::Base
-	validates :fname, presence: true
-	validates :lname, length: {minimum: 4}
-	validates :ful_name, presence: true
-	validates :age,  numericality: true
-	validate :age_check
-	validates :email,format:{ :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}
+	#validates :fname, presence: true
+	#validates :lname, length: {minimum: 4}
+	#validates :ful_name, presence: true
+	#validates :age,  numericality: true
+	#validate :age_check
+	#validates :email,format:{ :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}
 
 	before_validation :full_name
+
+	has_many :sections
+	has_many :students, through: :sections
 
 	scope :find_name , -> (name) {  where(:fname => name)}
 	scope :find_age, lambda { |age| where(:age => age) }

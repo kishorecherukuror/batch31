@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+    $('.addStep').click(function(){
+    	var dele = $(this).val(1);
+        alert(dele);
+    });
+});
